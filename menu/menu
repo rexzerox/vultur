@@ -315,7 +315,7 @@ do
 	    service ssh stop
 	    service openvpn stop
             sed -i "s/port [0-9]*/port $PORT/" /etc/openvpn/1194.conf
-            sed -i "s/deeniedoank/remote $myip $PORT/" /etc/openvpn/1194-client.ovpn > /home/vps/public_html/1194-client.ovpn
+            sed -i "s/ipserver/$myip $PORT/" /etc/openvpn/1194-client.ovpn > /home/vps/public_html/1194-client.ovpn
 	    service openvpn start
 	    service dropbear start
 	    service ssh start
