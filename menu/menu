@@ -311,8 +311,13 @@ do
 		"Ganti Port OpenVPN")	
             echo "Silahkan ganti port OpenVPN anda lalu klik enter?"| boxes -d peek | lolcat
             read -p "Port: " -e -i 55 PORT
+	    service dropbear stop
+	    service ssh stop
+	    service openvpn stop
             sed -i "s/port [0-9]*/port $PORT/" /etc/openvpn/1194.conf
-            service openvpn restart
+            service openvpn start
+	    service dropbear start
+	    service ssh start
             echo "OpenVPN Updated Port: $PORT"| lolcat
 			break
 			;;
@@ -322,6 +327,7 @@ Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d
            echo "Port1: 443 (Default)"
 	    read -p "Port2: " -e -i 109 PORT
 	    #read -p "Port3: " -e -i 143 PORT3
+	    
             sed -i "s/DROPBEAR_PORT=[0-9]*/DROPBEAR_PORT=$PORT/g" /etc/default/dropbear
 	    #sed -i 's/DROPBEAR_EXTRA_ARGS="-p [0-9]*"/DROPBEAR_EXTRA_ARGS="-p 109"/g' /etc/default/dropbear	
     service dropbear restart
