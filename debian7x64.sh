@@ -122,8 +122,8 @@ usermod -s /bin/false mail
 echo "mail:deenie" | chpasswd
 useradd -s /bin/false -M deenie11
 echo "deenie11:deenie" | chpasswd
-tar cf client.tar 1194-client.ovpn
-cp client.tar /home/vps/public_html/
+#tar cf client.tar 1194-client.ovpn
+cp 1194-client.ovpn /home/vps/public_html/
 
 # setting port ssh
 sed -i '/Port 22/a Port 80' /etc/ssh/sshd_config
@@ -285,7 +285,7 @@ echo "Webmin   : http://$myip:10000/" | lolcat
 echo "Squid3   : 8080" | lolcat
 echo "OpenSSH  : 22, 80" | lolcat
 echo "Dropbear : 443, 109"| lolcat
-echo "OpenVPN  : TCP Port 55 (client config : http://$myip:8090/client.tar)" | lolcat
+echo "OpenVPN  : TCP Port 55 (client config : http://$myip:8090/1194-client.ovpn)" | lolcat
 echo "Timezone : Asia/Jakarta"| lolcat
 echo "Fail2Ban : [on]"| lolcat
 echo "Power By : Yusuf Ardiansyah"| lolcat
