@@ -327,10 +327,14 @@ Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d
            echo "Port1: 443 (Default)"
 	    read -p "Port2: " -e -i 109 PORT
 	    #read -p "Port3: " -e -i 143 PORT3
-	    
+	    service dropbear stop
+	    service ssh stop
+	    service openvpn stop
             sed -i "s/DROPBEAR_PORT=[0-9]*/DROPBEAR_PORT=$PORT/g" /etc/default/dropbear
 	    #sed -i 's/DROPBEAR_EXTRA_ARGS="-p [0-9]*"/DROPBEAR_EXTRA_ARGS="-p 109"/g' /etc/default/dropbear	
-    service dropbear restart
+            service dropbear start
+	    service ssh start
+	    service openvpn start
             echo "Dropbear Updated Port2 : $PORT"| lolcat
 	    #echo "Dropbear Updated : Port2 $PORT2" | lolcat
 	    #echo "Dropbear Updated : Port3 $PORT3" | lolcat
@@ -341,8 +345,13 @@ Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d
             echo "Port default dan Port 2 tidak boleh sama !!!"| lolcat
 	    echo "Port default: 22"| lolcat
 	    read -p "Port 2: " -e -i 80 PORT
+	    service dropbear stop
+	    service ssh stop
+	    service openvpn stop
 	    sed -i "s/Port  [0-9]*\nPort [0-9]*/Port  22\nPort $PORT/g" /etc/ssh/sshd_config
-           service ssh restart
+           service ssh start
+	   service dropbear start
+	   service openvpn start
             echo "Openssh Updated Port: $PORT"| lolcat
 			break
 			;;
