@@ -239,6 +239,10 @@ wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/shc-3.8.7.
 tar xvfz shc-3.8.7.tgz
 cd shc-3.8.7
 make
+./shc -f /usr/local/bin/menu
+cd
+mv /usr/local/bin/menu.x /usr/local/bin/menu
+
 cd
 
 # swap ram
