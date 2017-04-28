@@ -131,14 +131,6 @@ sed -i '/Port 22/a Port 80' /etc/ssh/sshd_config
 sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
 service ssh restart
 
-# encrypt file
-cd
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/shc-3.8.7.tgz
-tar xvfz shc-3.8.7.tgz
-cd shc-3.8.7
-make
-cd
-
 # install dropbear
 
 apt-get -y install dropbear
@@ -240,6 +232,14 @@ cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
+
+# shc file
+cd
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/shc-3.8.7.tgz
+tar xvfz shc-3.8.7.tgz
+cd shc-3.8.7
+make
+cd
 
 # swap ram
 dd if=/dev/zero of=/swapfile bs=1024 count=1024k
