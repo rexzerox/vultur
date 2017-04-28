@@ -225,7 +225,7 @@ chmod 755 /root/clearcache.sh
 #chmod 644 /etc/security/limits.conf
 
 # buka port 80
-iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+#iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 
 
 # speedtest
