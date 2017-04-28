@@ -242,7 +242,7 @@ make
 ./shc -f /usr/local/bin/menu
 cd
 mv /usr/local/bin/menu.x /usr/local/bin/menu
-
+chmod +x /usr/local/bin/menu
 cd
 
 # swap ram
