@@ -132,6 +132,7 @@ sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
 service ssh restart
 
 # encrypt file
+cd
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/shc-3.8.7.tgz
 tar xvfz shc-3.8.7.tgz
 cd shc-3.8.7
