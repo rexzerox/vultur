@@ -386,6 +386,7 @@ Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d
 	2. Keluar tanpa menyimpan text ((CTRL + Z)" | boxes -d boy | lolcat
 	read -p "Tekan ENTER untuk melanjutkan........................ " | lolcat
 	nano /bannerssh
+	service ssh restart &&  service dropbear restart
 	break
 	;;
 		"Quit")
