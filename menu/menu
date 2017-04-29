@@ -192,7 +192,11 @@ echo "        #           Pin-BBM      : yu-suf                   #"| lolcat
 echo "        #                                                   #"| lolcat
 echo "        #        Copyright © yusuf-ardiansyah™  2017        #"| lolcat
 echo "        ====================================================="| lolcat
-echo ""
+echo "echo -e $red[+] $cyan"$HOSTNAME uptime is "$red[+]$cyan;uptime | awk /'up/ {print $3,$4,$5,$6,$7,$8,$9,$10}'
+uname -r
+uname -v -s
+echo -e $red[+]$cyan Today :$red[+]$cyan 
+date
 PS3='Silahkan ketik nomor pilihan anda lalu tekan ENTER: '
 options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor User Login" "Aktifkan Kill Multi Login" "Matikan Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
