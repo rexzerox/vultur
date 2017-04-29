@@ -252,19 +252,15 @@ do
 	    service cron restart
 	    service ssh restart
 	    service dropbear restart
-	    echo "AUTO KILL SUDAH AKTIFKAN"| lolcat
+	    echo "--------------------+ AUTO KILL SUDAH DI AKTIFKAN BOSS +--------------------" | lolcat
 	    
 	echo "Dasar pelit!!! user ente marah2 jangan salahkan ane ya boss
 	nanti jangan lupa di matikan boss" | boxes -d boy | lolcat
 		break
 		;;
 	"Matikan Kill Multi Login")
-	rm -rf /etc/cron.d/userlimit1
-	rm -rf /etc/cron.d/userlimit2
-	rm -rf /etc/cron.d/userlimit3
-	rm -rf /etc/cron.d/userlimit4
-	rm -rf /etc/cron.d/userlimit5
-	rm -rf /etc/cron.d/userlimit6
+	rm -rf /etc/cron.d/userlimit
+	
 	service cron restart
 	    service ssh restart
 	    service dropbear restart
