@@ -192,10 +192,10 @@ echo "        #           Pin-BBM      : yu-suf                   #"| lolcat
 echo "        #                                                   #"| lolcat
 echo "        #        Copyright © yusuf-ardiansyah™  2017        #"| lolcat
 echo "        ====================================================="| lolcat
-echo -e $red[+] $cyan"$HOSTNAME uptime is "$red[+]$cyan;uptime | awk /'up/ {print $3,$4,$5,$6,$7,$8,$9,$10}'
+echo -e [+]"$HOSTNAME uptime is "[+];uptime | awk /'up/ {print $3,$4,$5,$6,$7,$8,$9,$10}'
 uname -r
 uname -v -s
-echo -e $red[+]$cyan Today :$red[+]$cyan 
+echo -e [+] Today :[+]
 date
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan ENTER: '
