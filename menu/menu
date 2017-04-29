@@ -181,23 +181,17 @@ echo "-------------------------------------------------------------"| lolcat
 for PID in "${data[@]}"
 do
 	#echo "check $PID";
-	NUM=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | wc -l`;
+	#NUM=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | wc -l`;
 	USER=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | awk -F" " '{print $10}'`;
 	IP=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | awk -F" " '{print $12}'`;
 	waktu=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | awk -F" " '{print $1,$2,$3}'`;
-	if [ $NUM -eq 1 ]; then
-		echo "$waktu - $USER - $IP"| lolcat;
-	fi
-done
-data=( `ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'`);
-for PID in "${data[@]}"
-do
+
         #echo "check $PID";
-		NUM=`cat /var/log/auth.log | grep -i sshd | grep -i "Accepted password for" | grep "sshd\[$PID\]" | wc -l`;
-		USER=`cat /var/log/auth.log | grep -i sshd | grep -i "Accepted password for" | grep "sshd\[$PID\]" | awk '{print $9}'`;
-		IP=`cat /var/log/auth.log | grep -i sshd | grep -i "Accepted password for" | grep "sshd\[$PID\]" | awk '{print $11}'`;
-		waktu=`cat /var/log/auth.log | grep -i sshd | grep -i "Accepted password for" | grep "sshd\[$PID\]" | awk '{print $1,$2,$3}'`;
-        if [ $NUM -eq 1 ]; then
+		#NUM=`cat /var/log/auth.log | grep -i sshd | grep -i "Accepted password for" | grep "sshd\[$PID\]" | wc -l`;
+		USERS=`cat /var/log/auth.log | grep -i sshd | grep -i "Accepted password for" | grep "sshd\[$PID\]" | awk '{print $9}'`;
+		IPS=`cat /var/log/auth.log | grep -i sshd | grep -i "Accepted password for" | grep "sshd\[$PID\]" | awk '{print $11}'`;
+		waktus=`cat /var/log/auth.log | grep -i sshd | grep -i "Accepted password for" | grep "sshd\[$PID\]" | awk '{print $1,$2,$3}'`;
+                echo "$waktus - $USERS - $IPS" | lolcat;
                 echo "$waktu - $USER - $IP"| lolcat;
         fi
 done
@@ -225,7 +219,7 @@ echo "        #        Copyright © yusuf-ardiansyah™  2017        #"| lolcat
 echo "        ====================================================="| lolcat
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan ENTER: '
-options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor User Login" "Aktifkan Kill Multi Login" "Matikan Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Edit Banner Login" "Quit")
+options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor User Login" "Aktifkan Kill Multi Login" "Matikan Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Edit Banner Login" "Lihat Lokasi User" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -420,6 +414,10 @@ Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d
 	service ssh restart &&  service dropbear restart
 	break
 	;;
+	Lihat Lokasi User")
+	lihat_lokasi
+read -p "Ketik Salah Satu Alamat IP User: " userip
+
 		"Quit")
 		
 		break
