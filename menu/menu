@@ -192,7 +192,6 @@ echo "        #           Pin-BBM      : yu-suf                   #"| lolcat
 echo "        #                                                   #"| lolcat
 echo "        #        Copyright © yusuf-ardiansyah™  2017        #"| lolcat
 echo "        ====================================================="| lolcat
-echo -e [+] Today :[+]
 date
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan ENTER: '
