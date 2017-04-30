@@ -255,7 +255,7 @@ do
         "Perbarui User")
             read -p "Enter username yg di perbarui: " uname
             read -p "Aktif sampai tanggal Thn-Bln-Hr(YYYY-MM-DD): " expdate
-            renew_user | boxes -d dog | lolcat
+            renew_user | boxes -d dog
             break
             ;;
 	 "Semua User")
@@ -428,7 +428,7 @@ Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d
 	break
 	;;
 	"Lihat Lokasi User")
-	lokasi
+	lokasi | boxes -d peek
 read -p "Ketik Salah Satu Alamat IP User: " userip
 curl ipinfo.io/$userip
 break
