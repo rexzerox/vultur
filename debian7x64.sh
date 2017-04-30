@@ -132,8 +132,16 @@ sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
 service ssh restart
 
 # install dropbear
-
-apt-get install dropbear
+apt-get install zlib1g-dev
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/dropbear201674/dropbear-2016.74.tar.bz2"
+bzip2 -cd dropbear-2016.74.tar.bz2 | tar xvf -
+cd dropbear-2016.74
+./configure
+make && make install
+mv /usr/sbin/dropbear /usr/sbin/dropbear1
+ln /usr/local/sbin/dropbear /usr/sbin/dropbear
+service dropbear restart
+#apt-get install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=109/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 443"/g' /etc/default/dropbear
@@ -142,7 +150,7 @@ service ssh restart
 service dropbear restart
 
 # bannerssh
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bannersshlink.sh
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bannersshlink.sh"
 chmod 700 bannersshlink.sh
 ./bannersshlink.sh
 rm bannersshlink.sh
@@ -153,7 +161,7 @@ service fail2ban restart
 
 # install webmin
 cd
-wget http://prdownloads.sourceforge.net/webadmin/webmin_1.820_all.deb
+wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.820_all.deb"
 dpkg --install webmin_1.820_all.deb
 apt-get -y -f install
 rm /root/webmin_1.820_all.deb
