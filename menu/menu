@@ -275,14 +275,14 @@ do
 	  break
 	  ;;
 	    "Aktifkan Kill Multi Login")
-	   echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimitreboot
+	   #echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimitreboot
 	   echo "* * * * * root ./userlimit.sh 2" > /etc/cron.d/userlimit1
 	   echo "* * * * * root sleep 10; ./userlimit.sh 2" > /etc/cron.d/userlimit2
            echo "* * * * * root sleep 20; ./userlimit.sh 2" > /etc/cron.d/userlimit3
            echo "* * * * * root sleep 30; ./userlimit.sh 2" > /etc/cron.d/userlimit4
            echo "* * * * * root sleep 40; ./userlimit.sh 2" > /etc/cron.d/userlimit5
            echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit6
-	   echo "@reboot root /root/userlimitssh.sh" >> /etc/cron.d/userlimitreboot
+	   e#cho "@reboot root /root/userlimitssh.sh" >> /etc/cron.d/userlimitreboot
 	   echo "* * * * * root ./userlimitssh.sh 2" >> /etc/cron.d/userlimit1
 	   echo "* * * * * root sleep 11; ./userlimitssh.sh 2" >> /etc/cron.d/userlimit2
            echo "* * * * * root sleep 21; ./userlimitssh.sh 2" >> /etc/cron.d/userlimit3
@@ -421,7 +421,7 @@ Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d
 			;;
 	"Edit Banner Login")
 	echo -e "1. Simpan text (CTRL + X, lalu ketik Y dan tekan Enter)
-	2. Keluar tanpa menyimpan text ((CTRL + Z)" | boxes -d boy | lolcat
+	2. Membatalkan edit text (CTRL + X, lalu ketik N dan tekan Enter)" | boxes -d boy | lolcat
 	read -p "Tekan ENTER untuk melanjutkan........................ " | lolcat
 	nano /bannerssh
 	service ssh restart &&  service dropbear restart
