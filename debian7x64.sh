@@ -132,6 +132,7 @@ sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
 service ssh restart
 
 # install dropbear
+apt-get install dropbear
 apt-get install zlib1g-dev
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/dropbear201674/dropbear-2016.74.tar.bz2"
 bzip2 -cd dropbear-2016.74.tar.bz2 | tar xvf -
