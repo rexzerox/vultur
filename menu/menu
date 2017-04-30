@@ -193,7 +193,7 @@ do
 		waktus=`cat /var/log/auth.log | grep -i sshd | grep -i "Accepted password for" | grep "sshd\[$PID\]" | awk '{print $1,$2,$3}'`;
                 echo "$waktus - $USERS - $IPS" | lolcat;
                 echo "$waktu - $USER - $IP"| lolcat;
-        fi
+        
 done
 }
 
