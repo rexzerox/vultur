@@ -427,11 +427,12 @@ Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d
 	service ssh restart &&  service dropbear restart
 	break
 	;;
-	Lihat Lokasi User")
+	"Lihat Lokasi User")
 	lihat_lokasi
 read -p "Ketik Salah Satu Alamat IP User: " userip
 nmap --script ip-geolocation-* $userip
-
+break
+;;
 		"Quit")
 		
 		break
