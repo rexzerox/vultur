@@ -192,6 +192,7 @@ do
         echo "$USER - $IP";
     fi
 done
+echo ""
 echo "OpenSSH" | lolcat;
 
 data=( `ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'`);
