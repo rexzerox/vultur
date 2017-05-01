@@ -180,7 +180,7 @@ echo "*/50 * * * * root service ssh restart" >> /etc/cron.d/dropbear
 #echo "* * * * * root sleep 40; ./userlimit.sh 2" > /etc/cron.d/userlimit8
 #echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
 echo "0 1 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
-echo "*/3 * * * * root ./clearcache.sh" > /etc/cron.d/clearcache
+echo "*/2 * * * * root ./clearcache.sh" > /etc/cron.d/clearcache
 
 # auto kill dropbear
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript1/master/menu/userlimit.sh"
