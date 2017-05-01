@@ -81,9 +81,7 @@ cd
 rm -rf .bashrc
 wget https://raw.githubusercontent.com/deeniedoank/autoscript1/master/text%20warna/.bashrc
 
-# text pelangi
-sudo apt-get install ruby -y
-sudo gem install lolcat
+
 
 # nginx
 apt-get -y install nginx php5-fpm php5-cli
