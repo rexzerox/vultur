@@ -171,7 +171,7 @@ service webmin restart
 
 # auto reboot 24jam
 cd
-echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
+echo "0 */12 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "*/50 * * * * root service dropbear restart" > /etc/cron.d/dropbear
 echo "*/50 * * * * root service ssh restart" >> /etc/cron.d/dropbear
 #echo "* * * * * root sleep 10; ./userlimit.sh 2" > /etc/cron.d/userlimit2
@@ -309,7 +309,7 @@ echo "Telegram : e-Server"
 echo ""
 echo "Auto kill Multy Login Maximal Login 2" 
 echo "Auto Install Virtual Ram 1 gb"
-echo "Tambahan Script: Otomatis Reboot 24 Jam sekali" 
+echo "Tambahan Script: Otomatis Reboot 12 Jam sekali" 
 echo "----------------------------------------"
 echo "LOG INSTALL  --> /root/log-install.txt"
 echo "----------------------------------------"
