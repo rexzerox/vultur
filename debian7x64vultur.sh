@@ -242,6 +242,8 @@ chmod +x /usr/local/bin/menu
 
 # shc file
 cd
+apt-get install make
+cd
 wget https://raw.githubusercontent.com/deeniedoank/autoscript1/master/shc-3.8.7.tgz
 tar xvfz shc-3.8.7.tgz
 cd shc-3.8.7
