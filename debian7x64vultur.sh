@@ -29,10 +29,10 @@ ENABLE IPV4 AND IPV6
 COMPLETE 1%
 "
 echo ipv4 >> /etc/modules
-echo ipv6 >> /etc/modules
+#echo ipv6 >> /etc/modules
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
-sed -i 's/#net.ipv6.conf.all.forwarding=1/net.ipv6.conf.all.forwarding=1/g' /etc/sysctl.conf
+#sed -i 's/#net.ipv6.conf.all.forwarding=1/net.ipv6.conf.all.forwarding=1/g' /etc/sysctl.conf
 sysctl -p
 clear
 echo "
@@ -225,7 +225,7 @@ chmod 755 /root/clearcache.sh
 #chmod 644 /etc/security/limits.conf
 
 # buka port 80
-iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+#iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 
 
 # speedtest
