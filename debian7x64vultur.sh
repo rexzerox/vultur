@@ -293,30 +293,30 @@ rm ./debian7x64.sh
 
 #clear
 echo "========================================"  
-echo "Service Autoscript VPS YUSUF-ARDIANSYAH" | lolcat 
-echo "----------------------------------------" | lolcat
+echo "Service Autoscript VPS YUSUF-ARDIANSYAH" 
+echo "----------------------------------------"
 echo ""  | tee -a log-install.txt
-echo "Webmin   : http://$myip:10000/" | lolcat
-echo "Squid3   : 8080" | lolcat
-echo "OpenSSH  : 22, 80" | lolcat
-echo "Dropbear : 443, 109"| lolcat
-echo "OpenVPN  : TCP Port 55 (client config : http://$myip:81/1194-client.ovpn)" | lolcat
-echo "Timezone : Asia/Jakarta"| lolcat
-echo "Fail2Ban : [on]"| lolcat
-echo "Power By : YUSUF-ARDIANSYAH"| lolcat
-echo "Phone    : +6282139743432"| lolcat
-echo "Facebook : fb.com/t34mh4ck3r"| lolcat
-echo "PIN BBM  : yu-suf " | lolcat
-echo "Telegram : @ScriptVps"| lolcat
+echo "Webmin   : http://$myip:10000/"
+echo "Squid3   : 8080"
+echo "OpenSSH  : 22, 80"
+echo "Dropbear : 443, 109"
+echo "OpenVPN  : TCP Port 55 (client config : http://$myip:81/1194-client.ovpn)"
+echo "Timezone : Asia/Jakarta"
+echo "Fail2Ban : [on]"
+echo "Power By : YUSUF-ARDIANSYAH"
+echo "Phone    : +6282139743432"
+echo "Facebook : fb.com/t34mh4ck3r"
+echo "PIN BBM  : yu-suf "
+echo "Telegram : @ScriptVps"
 echo ""
-echo "Auto kill Multy Login Maximal Login 2"  | lolcat
-echo "Auto Install Virtual Ram 1 gb"| lolcat
-echo "Tambahan Script: Otomatis Reboot 24 Jam sekali" | lolcat
-echo "----------------------------------------"| lolcat
-echo "LOG INSTALL  --> /root/log-install.txt"| lolcat
-echo "----------------------------------------"| lolcat
-echo " CREATED BY YUSUF-ARDIANSYAH - JUAL AKUN SSH - VPS - SCRIPT INSTALLER PREMIUM"| lolcat
+echo "Auto kill Multy Login Maximal Login 2"
+echo "Auto Install Virtual Ram 1 gb"
+echo "Tambahan Script: Otomatis Reboot 24 Jam sekali"
+echo "----------------------------------------"
+echo "LOG INSTALL  --> /root/log-install.txt"
+echo "----------------------------------------"
+echo " CREATED BY YUSUF-ARDIANSYAH - JUAL AKUN SSH - VPS - SCRIPT INSTALLER PREMIUM"
 echo "========================================"  | tee -a log-install.txt
-echo "      SILAHKAN REBOOT VPS ANDA !" | lolcat
+echo "      SILAHKAN REBOOT VPS ANDA !"
 echo "========================================"  | tee -a log-install.txt
 cat /dev/null > ~/.bash_history && history -c
